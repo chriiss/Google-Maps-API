@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>MappingRoad</title>
+        <link rel="stylesheet" type="text/css" href="public/css/style.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+    `   <header>
+            <h1 id="title"><i class="fa fa-map-marker" aria-hidden="true"></i> MappingRoad</h1>
+            <button id="buttonCalcul"><span class="fa fa-road" aria-hidden="true"></span> Calculer votre itineraire</button>
+        </header>
+
+        <div id="container"> 
+        <nav class="navbar">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+                    </button>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                <div class="col-md-2">
+                    <input type="text" class="form-control" id="departures" placeholder="Votre départ" />
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" id="arrival" placeholder="Votre arrivée" />
+                </div>
+                <div class="col-md-2">
+                    <select id="travel-mode" class="selectpicker form-control" data-width="fit">
+                        <option value="driving" data-icon="fa fa-car"></option>
+                        <option value="bicycling" data-icon="fa fa-bicycle"></option>
+                        <option value="walking" data-icon="fa fa-male"></option>
+                    </select>
+                </div>
+                <div class="col-md-2">
+                    <select class="selectpicker form-control" id="monumenttype" multiple title="Attraction touristique">
+                        <option value="museum">Musées</option>
+                        <option value="park">Parc</option>
+                        <option value="food">Restaurant</option>
+                        <option value="airport">Aéroport</option>
+                    </select>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Thème<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a id="defaultSelect" class="theme" href="#">Default</a></li>
+                            <li><a id="retroSelect" class="theme" href="#">Retro</a></li>
+                            <li><a id="nightSelect" class="theme" href="#">Night</a></li>
+                            <li><a id="caribeanSelect" class="theme" href="#">Caraibes</a></li>
+                            <li><a id="rainbowSelect" class="theme" href="#">Rainbow</a></li>
+                            <li><a id="nightlightSelect" class="theme" href="#">Night and Light</a></li>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <button id="search" class="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>      
+            </div>
+        </nav>
+        </div>
+        <div id="maps"></div>
+
+        <div id="container-maps">
+            <div id="maps-results"></div>
+        </div>
+        <div class="background-movie">
+            <video autoplay loop id="video-background" muted>
+                <source src="public/video/maps.mp4" type="video/mp4">
+            </video>
+        </div>
+        <p id="copyright"><i class="fa fa-copyright" aria-hidden="true"></i> Copyright MappingRoad CK 2017</p> 
+   
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript" src="public/javascript/script.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS_OhlvYUXdiIKeOsj7d71yw0ttC04mP8&signed_in=true&callback=initMap&libraries=places"></script> 
+    </body>
+</html>
